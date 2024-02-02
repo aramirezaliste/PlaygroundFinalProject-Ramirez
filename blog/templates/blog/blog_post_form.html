@@ -1,0 +1,23 @@
+{% extends 'blog/layout.html' %}
+
+{% block title %}
+    Creando un Post
+{% endblock title %}
+
+{% block page_title %}
+    <div class="d-flex justify-content-center align-items-center mb-3">
+        <h1>Crea tu post</h1>
+    </div>
+{% endblock page_title %}
+
+{% block content %}
+    <div class="d-flex justify-content-center align-items-center mb-3">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-dark text-warning">Postear</button>
+            <button type="button" class="btn btn-dark text-warning"><a class="text-warning text-decoration-none" href="{% url 'blog:posts_list' %}">Cancelar</a></button>
+        </form>
+    </div>
+    
+{% endblock content %}

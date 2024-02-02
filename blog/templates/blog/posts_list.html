@@ -1,11 +1,15 @@
+
 {% extends 'blog/layout.html' %}
+
+{% load static %}
+{% load bootstrap_icons %}
 
 {% block title %}
     Posts
 {% endblock title %}
 
 {% block page_title %}
-    <div class="d-flex justify-content-center align-items-center mb-3">
+    <div class="d-flex justify-content-center align-items-center mb-5">
         <h1>Lista de Posts</h1>
     </div>
 {% endblock page_title %}
@@ -13,7 +17,10 @@
 {% block content %}
     {% for post in posts %}
         {% include 'blog/includes/post_card.html' with title=post.title sub_title=post.sub_title author=post.author%}
-    {% empty %}
-        <h1>No hay post :(</h1>
+    {% empty %} 
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <h3 class="mb-5 text-danger">No hay posts {% bs_icon 'emoji-tear' size='1em' extra_classes="ms-2 text-danger me-1" %}</h3>
+        <button class="btn btn-dark text-warning w-25 "><a class="text-warning text-decoration-none d-flex align-items-center justify-content-center" href="{% url 'blog:create_post' %}">Crear post{% bs_icon 'pen' size='1em' extra_classes="ms-2 text-warning" %}</a></button>
+    </div>
     {% endfor %}
 {% endblock content %}
