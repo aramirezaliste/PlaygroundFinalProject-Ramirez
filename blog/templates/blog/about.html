@@ -1,0 +1,38 @@
+{% extends 'blog/layout.html' %}
+
+{% load bootstrap_icons %}
+
+{% block title %}
+    Inicio     
+{% endblock title %}
+
+{% block page_title %}
+    <div class="d-flex justify-content-center align-items-center mb-3">
+        <h1>Acerca de Mi</h1>
+    </div>
+{% endblock page_title %}
+
+{% block content %}
+    <div class="container-fluid row">
+        <p>
+            Mi nombre es Andres Ramirez, me encanta la programacion, creo que es un mundo muy entretenido y basto.
+        </p>
+        <p>
+            Este proyecto me ha llevado a enfrentar diferentes problematicas, frustantes y molestas, pero no imposibles de resolver, y lo he disfrutado harto. Django es un framework bastante amigable para el programador, si se tiene un orden o arquitectura correcta.
+        </p>
+        <p>
+            Mis redes sociales, por si les gustaria reclutarme o por interes xd:
+            <ul class="list-group list-group-flush" >
+                <li class="list-group-item list-group-item-action list-group-item-secondary">
+                    <a class="text-primary text-decoration-none d-flex align-items-center" href="https://www.linkedin.com/in/aramirezaliste/"> {% bs_icon 'linkedin' size='2em' extra_classes="ms-2 text-primary me-1" %}LinkedIn</a>
+                </li>
+                <li class="list-group-item list-group-item-action list-group-item-dark">
+                    <a class="text-dark text-decoration-none d-flex align-items-center" href="https://github.com/aramirezaliste"> {% bs_icon 'github' size='2em' extra_classes="ms-2 text-dark me-1" %}Github</a>
+                </li>
+                <li class="list-group-item list-group-item-action list-group-item-success ">
+                    <a class="text-success text-decoration-none d-flex align-items-center" href="mailto:aramirezaliste@gmail.com"> {% bs_icon 'envelope' size='2em' extra_classes="ms-2 text-success me-1" %}Gmail</a>
+                </li>
+            </ul>
+        </p>
+   </div>
+{% endblock content %}

@@ -1,5 +1,7 @@
 {% extends 'blog/layout.html' %}
 
+{% load static %}
+
 {% block title %}
     Inicio     
 {% endblock title %}
@@ -11,7 +13,7 @@
 {% endblock page_title %}
 
 {% block content %}
-    <div class="container-fluid row">
-        Blogs
+    <div class="container-fluid  d-flex justify-content-center align-items-center">
+        <img src="{% static 'blog\img\musica-e1584123209397.webp' %}"/>
    </div>
 {% endblock content %}

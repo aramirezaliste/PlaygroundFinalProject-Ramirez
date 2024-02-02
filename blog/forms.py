@@ -5,7 +5,8 @@ from .models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'sub_title', 'body']
+        fields = ['title', 'sub_title', 'body', 'author']
+        exclude = ['author']
         widgets = {
             'title': forms.TextInput(
                 attrs =  { 
@@ -25,5 +26,5 @@ class PostForm(forms.ModelForm):
                     'rows': 3,
                     'placeholder':'Cuerpo',
                     }
-                ),
+                )
         }

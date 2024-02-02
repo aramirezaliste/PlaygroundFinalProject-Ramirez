@@ -6,7 +6,7 @@
 
 {% block page_title %}
     <div class="d-flex justify-content-center align-items-center mb-3">
-        <h1>Crea tu post</h1>
+        <h1>Crea tu post {% if user == None %} {% else %}{{user.username}}{% endif %}</h1>
     </div>
 {% endblock page_title %}
 
