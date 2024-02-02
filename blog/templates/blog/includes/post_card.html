@@ -1,0 +1,20 @@
+{% load static %}
+{% load bootstrap_icons %}
+<div class="d-flex justify-content-center mb-3">
+  <div class="card w-75">
+    <div class="card-header">
+      {{title}}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{sub_title}} ...</p>
+        <footer class="blockquote-footer">Autor <cite title="Source Title">{{author}}</cite></footer>
+      </blockquote>
+      <div class="d-flex align-items-center justify-content-end">
+        <a class="text-primary text-decoration-none d-flex align-items-center" href="{% url 'blog:index' %}"> {% bs_icon 'box-arrow-right' size='1em' extra_classes="ms-2 text-primary me-1" %} Ir al post</a>
+        <a class="text-success text-decoration-none d-flex align-items-center" href="{% url 'blog:index' %}"> {% bs_icon 'pen-fill' size='1em' extra_classes="ms-2 text-success me-1" %} Editar</a>
+        <a class="text-danger text-decoration-none d-flex align-items-center" href="{% url 'blog:index' %}"> {% bs_icon 'trash3-fill' size='1em' extra_classes="ms-2 text-danger me-1" %} Borrar</a>
+      </div>
+      </div>
+  </div>
+</div>

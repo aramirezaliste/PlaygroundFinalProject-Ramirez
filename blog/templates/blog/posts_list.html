@@ -1,0 +1,19 @@
+{% extends 'blog/layout.html' %}
+
+{% block title %}
+    Posts
+{% endblock title %}
+
+{% block page_title %}
+    <div class="d-flex justify-content-center align-items-center mb-3">
+        <h1>Lista de Posts</h1>
+    </div>
+{% endblock page_title %}
+
+{% block content %}
+    {% for post in posts %}
+        {% include 'blog/includes/post_card.html' with title=post.title sub_title=post.sub_title author=post.author%}
+    {% empty %}
+        <h1>No hay post :(</h1>
+    {% endfor %}
+{% endblock content %}

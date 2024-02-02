@@ -1,0 +1,25 @@
+{% load static %}
+{% load bootstrap_icons %}
+<nav class="navbar navbar-dark text-light bg-dark">
+	<div class="container-fluid">
+		<a href="{% url 'blog:index' %}"> {% bs_icon 'vinyl-fill' size='2em' color="tomato" extra_classes="ms-2" %}</a>
+			<ul class="navbar-nav d-flex flex-row gap-4">
+				<li class="nav-item ">
+					<a class="nav-link" href="{% url 'admin:index' %}"> <i class="bi bi-vinyl-fill"></i>Admin</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link" href="{% url 'blog:posts_list' %}"> <i class="bi bi-vinyl-fill"></i>Posts</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'blog:index' %}"> <i class="bi bi-vinyl-fill"></i>Acerca de Mi</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'blog:index' %}"> <i class="bi bi-vinyl-fill"></i>Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'blog:index' %}"> <i class="bi bi-vinyl-fill"></i>Login</a>
+				</li>
+			</ul>
+
+	</div>
+</nav>
