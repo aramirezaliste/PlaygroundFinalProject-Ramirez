@@ -1,0 +1,40 @@
+{% extends 'accounts/layout.html' %}
+
+{% load static %}
+{% load bootstrap_icons %}
+
+{% block title %}
+    Perfil
+{% endblock title %}
+
+{% block page_title %}
+    <div class="d-flex justify-content-center align-items-center m-3">
+        <h3>Perfil</h3>
+    </div>
+{% endblock page_title %}
+
+{% block content %}
+    {% if user == None %}
+        <div class="d-flex justify-content-center align-items-center m-3">
+            <h3>Para ver su perfil debe iniciar sesion</h3>
+        </div>
+    {% else %}
+        <div class="d-flex row justify-content-center align-items-center m-2 gap-2">
+            <div class="col-3 bg-dark d-flex flex-column justify-content-center align-items-center rounded-3" style="min-height: 30em;">
+                <div class="text-center d-flex justify-content-center align-items-center my-2 bg-dark" style="width:10rem; height:10rem; border-radius: 50%;">
+                    <img src="..." class="rounded-circle" alt="profile">
+                  </div>
+                <h4 class="text-warning ps-2">{% if not user.first_name %} Nombre {% else %} {{user.first_name}} {{user.last_name}} {% endif %}</h4>
+                <h5 class="text-warning ps-2">{% if not user.username %} Nombre de usuario {% else %} {{user.username}} {% endif %}</h5>
+                <div class="d-flex justify-content-center align-items-center">
+                    <a class="btn btn-danger text-warning mb-3" href="{% url 'accounts:profile_edit' %}">Editar perfil</a>
+                </div>
+                <h6 class="text-warning ps-2">{% if not user.email %} Email {% else %} {{user.email}} {% endif %}</h6>
+                <a href="{% if not user.link %} # {% else %} {{user.link}} {% endif %}"  class=" text-decoration-none mb-3 " >ir a Link</a>
+            </div>
+            <div class="col-8 bg-dark rounded-3" style="min-height: 30em;">
+                <p class="text-warning ps-2 m-3">{% if not user.description %} Descripcion {% else %} {{user.description}} {% endif %}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}

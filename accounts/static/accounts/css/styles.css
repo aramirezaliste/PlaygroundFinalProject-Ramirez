@@ -1,3 +1,7 @@
 body {
     background-color: whitesmoke;
 }
+
+.bg-tomato {
+    background-color: tomato;
+}

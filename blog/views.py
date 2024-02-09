@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
+#from accounts.models import CustomUser
 
 from .models import Post
 from .forms import PostForm
@@ -20,6 +21,9 @@ def posts_list(request):
         'posts_len' : posts_len
     }
     return render(request, 'blog/posts_list.html', context)
+
+def edit_post(request, id):
+    pass
 
 def create_post(request):
     if request.method == 'POST':

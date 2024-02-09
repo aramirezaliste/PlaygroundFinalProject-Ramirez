@@ -1,7 +1,7 @@
 from django.contrib.auth.views import LoginView
 from django.shortcuts import redirect, render
 
-from .forms import CustomAuthenticationForm, CustomUserCreationForm
+from .forms import CustomAuthenticationForm, CustomUserCreationForm, UserModificationForm
 
 # Create your views here.
 class CustomLoginView(LoginView):
@@ -20,3 +20,19 @@ def register(request):
             'form': form
         }
     return render(request, "accounts/register.html", context )
+
+def profile(request):
+   return render(request, "accounts/profile.html", {} )
+
+def profile_edit(request):
+    if request.method == 'POST':
+        form = UserModificationForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+        return redirect("accounts:profile")
+    if request.method == "GET":
+        form = UserModificationForm(instance=request.user)
+        context = {
+            'form': form
+        }
+        return render(request, "accounts/profile_edit.html", context )
