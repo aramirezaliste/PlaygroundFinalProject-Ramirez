@@ -1,0 +1,40 @@
+
+{% extends 'accounts/layout.html' %}
+
+{% load static %}
+{% load bootstrap_icons %}
+
+{% block title %}
+    Post {{post.title}}
+{% endblock title %}
+
+{% block page_title %}
+    <div class="d-flex justify-content-center align-items-center m-3">
+        <h3>Detalle del post {{post.title}}</h3>
+    </div>
+{% endblock page_title %}
+
+{% block content %}
+    {% if user == None %}
+        <div class="d-flex justify-content-center align-items-center m-3">
+            <h3>Para ver el post debe iniciar sesion</h3>
+        </div>
+    {% else %}
+    <div class="container">
+         <div class="card text-center">
+            <div class="card-header">
+                {{post.title}}
+            </div>
+            <div class="card-body text-start">
+                <h5 class="card-title">{{post.sub_title}}</h5>
+                <p class="card-text">{{post.body}}</p>
+                <a href="{% url 'blog:posts_list' %}" class="btn btn-success" >Ir a lista de posts</a>
+            </div>
+            <div class="card-footer text-muted">
+                    Creado el {{post.create_date}} || Autor: {{post.author}}
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+{% endblock content %}

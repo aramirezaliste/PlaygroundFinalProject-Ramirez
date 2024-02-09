@@ -11,9 +11,9 @@
         <footer class="blockquote-footer">Autor <cite title="Source Title">{{author}}</cite></footer>
       </blockquote>
       <div class="d-flex align-items-center justify-content-end">
-        <a class="text-primary text-decoration-none d-flex align-items-center" href="{% url 'blog:index' %}"> {% bs_icon 'box-arrow-right' size='1em' extra_classes="ms-2 text-primary me-1" %} Ir al post</a>
-        <a class="text-success text-decoration-none d-flex align-items-center" href="{% url 'blog:index' %}"> {% bs_icon 'pen-fill' size='1em' extra_classes="ms-2 text-success me-1" %} Editar</a>
-        <a class="text-danger text-decoration-none d-flex align-items-center" href="{% url 'blog:index' %}"> {% bs_icon 'trash3-fill' size='1em' extra_classes="ms-2 text-danger me-1" %} Borrar</a>
+        <a class="text-primary text-decoration-none d-flex align-items-center" href="{% url 'blog:detail_post' id %}"> {% bs_icon 'box-arrow-right' size='1em' extra_classes="ms-2 text-primary me-1" %} Ir al post</a>
+        <a class="text-success text-decoration-none d-flex align-items-center" href="{% url 'blog:post_edit' id %}"> {% bs_icon 'pen-fill' size='1em' extra_classes="ms-2 text-success me-1" %} Editar</a>
+        <a class="text-danger text-decoration-none d-flex align-items-center" href="{% url 'blog:remove_post' id %}"> {% bs_icon 'trash3-fill' size='1em' extra_classes="ms-2 text-danger me-1" %} Borrar</a>
       </div>
       </div>
   </div>

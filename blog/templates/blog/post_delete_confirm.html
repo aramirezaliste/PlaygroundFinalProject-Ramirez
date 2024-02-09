@@ -1,0 +1,19 @@
+{% extends 'blog/layout.html' %}
+
+{% block title %}
+    Eliminar Post
+{% endblock title %}
+
+{% block page_title %}
+    <div class="d-flex justify-content-center align-items-center m-3">
+         <h1>Post eliminado</h1>
+    </div>
+    
+{% endblock page_title %}
+
+{% block content %}
+    <div class="d-flex justify-content-center align-items-center mb-3">
+        <h2>Su post con el Titulo: {{post.title}} ha sido correctamente eliminado</h3>
+    </div>
+    
+{% endblock content %}

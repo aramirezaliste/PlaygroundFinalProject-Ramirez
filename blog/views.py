@@ -23,7 +23,30 @@ def posts_list(request):
     return render(request, 'blog/posts_list.html', context)
 
 def edit_post(request, id):
-    pass
+    post = Post.objects.get(id=id)
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            form = PostForm(request.POST, instance=post)
+            if form.is_valid():
+                form.save()
+            return redirect("blog:posts_list")
+    else:  # request.method == "GET":
+         form = PostForm(instance=post)
+         context = {
+            'form': form,
+            'post': post
+         }
+    return render(request, 'blog/post_edit.html', context)
+
+def remove_post(request, id):
+    post = Post.objects.get(id=id)
+    if request.method == 'GET':
+        if request.user.is_authenticated:
+            post.delete()
+    context = {
+        'post' : post
+    }
+    return render(request, 'blog/post_delete_confirm.html', context)
 
 def create_post(request):
     if request.method == 'POST':
@@ -50,3 +73,11 @@ def create_post(request):
             'user': user
         }
     return render(request, 'blog/blog_post_form.html', context)
+
+def detail_post(request, id):
+        post = Post.objects.get(id=id)
+        if request.method == "GET":
+            context = {
+                'post': post
+            }
+        return render(request, 'blog/post_detail.html', context)
