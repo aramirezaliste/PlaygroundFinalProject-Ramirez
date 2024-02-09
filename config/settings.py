@@ -28,8 +28,9 @@ SECRET_KEY = 'django-insecure-jkg1yhr79ee7778=_j6k%fto9)9#ef6^bya&l(imr4y!qkzp!!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-aramirezali-playgroundf-xcrt89e10a0.ws-us107.gitpod.io', '127.0.0.1']
+ALLOWED_HOSTS = ['8000-aramirezali-playgroundf-zo20bjzwilt.ws-us108.gitpod.io']
 
+CSRF_TRUSTED_ORIGINS=['https://8000-aramirezali-playgroundf-zo20bjzwilt.ws-us108.gitpod.io']
 
 # Application definition
 
@@ -41,8 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_bootstrap_icons',
-    'blog'
-]
+    'blog',
+    'accounts'
+]   
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,3 +132,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+

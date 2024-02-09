@@ -5,19 +5,29 @@
 {% endblock title %}
 
 {% block page_title %}
-    <div class="d-flex justify-content-center align-items-center mb-3">
-        <h1>Crea tu post {% if user == None %} {% else %}{{user.username}}{% endif %}</h1>
-    </div>
+    {% if user == None %}
+        <div class="d-flex justify-content-center align-items-center m-3">
+            <h3>Para crear un post debe iniciar sesion</h3>
+        </div>
+    {% else %}
+        <div class="d-flex justify-content-center align-items-center m-3">
+            <h1>Crea tu post {{user.username}}</h1>
+        </div>
+    {% endif %}
+    
 {% endblock page_title %}
 
 {% block content %}
+    {% if user == None %}
+    {% else %}
     <div class="d-flex justify-content-center align-items-center mb-3">
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn btn-dark text-warning">Postear</button>
+            <button type="submit" class="btn btn-dark text-warning">Crear</button>
             <button type="button" class="btn btn-dark text-warning"><a class="text-warning text-decoration-none" href="{% url 'blog:posts_list' %}">Cancelar</a></button>
         </form>
     </div>
+    {% endif %}
     
 {% endblock content %}

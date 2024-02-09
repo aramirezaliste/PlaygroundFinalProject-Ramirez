@@ -1,0 +1,31 @@
+{% extends 'accounts/layout.html' %}
+
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block page_title %}
+    <div class="d-flex justify-content-center align-items-center m-3">
+        <h3>Iniciar sesion</h3>
+    </div>
+{% endblock page_title %}
+
+{% block content %}
+    <div class="d-flex justify-content-center align-items-center m-3">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="d-flex justify-content-center align-items-center gap-3">
+                <input type="hidden" name="next" value="{% url 'blog:index' %}">
+                <button type="submit" class="btn btn-dark text-warning">Iniciar Sesión</button>
+                <a href="{% url 'blog:index' %}" class="btn btn-dark text-warning">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="d-flex flex-column justify-content-center align-items-center mb-3">
+        <p>ó</p>
+        <a href="{% url 'accounts:register' %}" class="btn btn-dark text-warning">Crear cuenta</a>
+    </div>
+
+{% endblock content %}
