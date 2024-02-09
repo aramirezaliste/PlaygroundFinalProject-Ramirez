@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-jkg1yhr79ee7778=_j6k%fto9)9#ef6^bya&l(imr4y!qkzp!!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-aramirezali-playgroundf-zo20bjzwilt.ws-us108.gitpod.io']
+ALLOWED_HOSTS = ['127.0.0.1', '8000-aramirezali-playgroundf-zo20bjzwilt.ws-us108.gitpod.io']
 
 CSRF_TRUSTED_ORIGINS=['https://8000-aramirezali-playgroundf-zo20bjzwilt.ws-us108.gitpod.io']
 

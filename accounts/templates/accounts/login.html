@@ -11,21 +11,21 @@
 {% endblock page_title %}
 
 {% block content %}
-    <div class="d-flex justify-content-center align-items-center m-3">
+    <div class="d-flex justify-content-center align-items-center">
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <div class="d-flex justify-content-center align-items-center gap-3">
                 <input type="hidden" name="next" value="{% url 'blog:index' %}">
-                <button type="submit" class="btn btn-dark text-warning">Iniciar Sesión</button>
+                <button type="submit" class="btn btn-dark text-warning">Iniciar sesión</button>
                 <a href="{% url 'blog:index' %}" class="btn btn-dark text-warning">Cancelar</a>
             </div>
         </form>
     </div>
-    <hr>
-    <div class="d-flex flex-column justify-content-center align-items-center mb-3">
-        <p>ó</p>
-        <a href="{% url 'accounts:register' %}" class="btn btn-dark text-warning">Crear cuenta</a>
+    <hr class="mb-1">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <span class="mb-1" >ó</span>
+        <a href="{% url 'accounts:register' %}" class="btn btn-dark text-warning">Registrarse</a>
     </div>
 
 {% endblock content %}
