@@ -3,7 +3,7 @@
 ## Nombre
 
 - Andres Ramirez
-- [Perfil de LinkedIn](https://linkedin.com/aramirezaliste/)
+- [Perfil de LinkedIn](https://www.linkedin.com/in/aramirezaliste/)
 - [Perfil de Github](https://github.com/aramirezaliste/)
 
 ##  Resumen del Proyecto
