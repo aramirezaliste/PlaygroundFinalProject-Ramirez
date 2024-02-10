@@ -3,7 +3,6 @@ from .models import Post
 
 admin.site.site_title = "Blog"
 
-
 class PostAdmin(admin.ModelAdmin):
     list_display = ("title", "sub_title", "body", "author", "create_date")
     list_display_links = ("title",)

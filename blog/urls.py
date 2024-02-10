@@ -1,7 +1,8 @@
 
 from django.urls import path
-
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 app_name = 'blog'
 
@@ -15,3 +16,5 @@ urlpatterns = [
     path('posts/detail/<int:id>', views.detail_post, name='detail_post')
 
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

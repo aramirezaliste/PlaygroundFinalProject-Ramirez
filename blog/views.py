@@ -52,7 +52,7 @@ def create_post(request):
     if request.method == 'POST':
         if request.user.is_authenticated:
             user = request.user
-            form = PostForm(request.POST)
+            form = PostForm(request.POST, request.FILES)
             if form.is_valid():
                 post = form.save()
                 post.author = user

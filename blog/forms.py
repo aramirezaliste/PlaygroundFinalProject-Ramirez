@@ -5,7 +5,7 @@ from .models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'sub_title', 'body', 'author']
+        fields = ['title', 'sub_title', 'body', 'image', 'author']
         exclude = ['author']
         widgets = {
             'title': forms.TextInput(
@@ -26,5 +26,8 @@ class PostForm(forms.ModelForm):
                     'rows': 3,
                     'placeholder':'Cuerpo',
                     }
+                ),
+            'imagen': forms.ImageField(
+              
                 )
         }

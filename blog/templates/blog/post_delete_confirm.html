@@ -12,8 +12,8 @@
 {% endblock page_title %}
 
 {% block content %}
-    <div class="d-flex justify-content-center align-items-center mb-3">
+    <div class="d-flex flex-column justify-content-center align-items-center mb-3">
         <h2>Su post con el Titulo: {{post.title}} ha sido correctamente eliminado</h3>
+        <a href="{% url 'blog:posts_list' %}" class="btn btn-success" >Ir a lista de posts</a>
     </div>
-    
 {% endblock content %}
