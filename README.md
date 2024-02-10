@@ -9,7 +9,7 @@
 ##  Resumen del Proyecto
 
 - Simulando un blog de musica con framework Django, Bootstrap
-- [Link a Youtube]()
+- [Link a Youtube](https://www.youtube.com/watch?v=5n31Ok_oyKk)
 
 ## Pasos para ejecutar el proyecto
 
