@@ -3,11 +3,13 @@
 ## Nombre
 
 - Andres Ramirez
-- Link de LinkedIn
+- [Perfil de LinkedIn](https://linkedin.com/aramirezaliste/)
+- [Perfil de Github](https://github.com/aramirezaliste/)
 
 ##  Resumen del Proyecto
 
-- Simulando un blog de musica con framework Django
+- Simulando un blog de musica con framework Django, Bootstrap
+- [Link a Youtube]()
 
 ## Pasos para ejecutar el proyecto
 
