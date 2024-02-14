@@ -37,7 +37,7 @@
         ```
             $ .\.venv\Scripts\activate
         ```
-    - Instalar paquete desde requeriments.txt
+    - Instalar paquete desde requirements.txt
          ```
             $ pip3 install -r requirements.txt
         ```
